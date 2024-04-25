@@ -60,6 +60,19 @@ describe('Todo Functions', function() {
             assert.isFalse(result);
         });
     });
+ // Test case for deleting a todo item
+    describe('deleteTodo()', function() {
+        it('should delete an existing todo item', function() {
+            const todoIdToDelete = "todo-123";
+            const result = deleteTodo(todoIdToDelete);
+            assert.isTrue(result);
+        });
 
-}
+        it('should return false if the todo item to delete does not exist', function() {
+            const nonExistentTodoId = "non-existent-todo";
+            const result = deleteTodo(nonExistentTodoId);
+            assert.isFalse(result);
+        });
+    });
+});
 
