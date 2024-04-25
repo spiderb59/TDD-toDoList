@@ -1,5 +1,19 @@
 {
+  "name": "TDD-toDoList",
+  "lockfileVersion": 2,
+  "requires": true,
+  "scripts": {
+    "dev": "node app.js"
+  },
   "dependencies": {
     "chai": "^5.1.0"
+  },
+  "devDependencies": {
+    "assertion-error": "^2.0.1",
+    "check-error": "^2.0.0",
+    "deep-eql": "^5.0.1",
+    "get-func-name": "^2.0.1",
+    "loupe": "^3.1.0",
+    "pathval": "^2.0.0"
   }
 }

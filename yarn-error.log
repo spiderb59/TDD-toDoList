@@ -1,0 +1,41 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn run dev
+
+PATH: 
+  /bin:/usr/bin:/usr/local/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  18.18.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  SyntaxError: /home/spiderb59/TDD-toDoList/package.json: Expected ',' or '}' after property value in JSON at position 140 (line 9 column 5)
+      at JSON.parse (<anonymous>)
+      at eval (file:///usr/local/lib/node_modules/yarn/dist/yarn.js:1397:57)
+      at Generator.next (<anonymous>)
+      at step (file:///usr/local/lib/node_modules/yarn/dist/yarn.js:309:30)
+      at eval (file:///usr/local/lib/node_modules/yarn/dist/yarn.js:320:13)
+
+npm manifest: 
+  {
+    "name": "TDD-toDoList",
+    "version": "1.0.0",
+    "scripts": {
+      "dev": "node app.js"
+    },
+    "dependencies": {
+      "chai": "^5.1.0"
+      // Add other dependencies if needed
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
