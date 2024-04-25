@@ -33,5 +33,33 @@ describe('Todo Functions', function() {
             assert.isNull(newTodo);
         });
     });
+
+        // Test case for editing an existing todo item
+    describe('editTodo()', function() {
+        it('should edit an existing todo item', function() {
+            const editedTodo = {
+                id: "todo-123",
+                title: "Edited Todo",
+                description: "This todo item has been edited",
+                dueDate: "2024-05-05",
+                priority: "Medium"
+            };
+            const result = editTodo(editedTodo);
+            assert.isTrue(result);
+        });
+
+        it('should return false if the todo item to edit does not exist', function() {
+            const nonExistentTodo = {
+                id: "non-existent-todo",
+                title: "Edited Todo",
+                description: "This todo item has been edited",
+                dueDate: "2024-05-05",
+                priority: "Medium"
+            };
+            const result = editTodo(nonExistentTodo);
+            assert.isFalse(result);
+        });
+    });
+
 }
 
