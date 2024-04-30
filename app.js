@@ -52,14 +52,43 @@ function handleButtonClick(event) {
         // Handle edit button click
         const todoId = target.getAttribute('data-id');
         // Implement edit functionality
-        console.log('Edit todo with ID:', todoId);
+        editTodoItem(todoId);
     } else if (target.classList.contains('delete-btn')) {
         // Handle delete button click
         const todoId = target.getAttribute('data-id');
         // Implement delete functionality
-        console.log('Delete todo with ID:', todoId);
+        deleteTodoItem(todoId);
     }
 }
+
+// Function to edit a todo item
+function editTodoItem(todoId) {
+    // Find the todo item in the todoList array
+    const todoItem = todoList.find(todo => todo.id === todoId);
+    if (todoItem) {
+        // Example: You can open a modal or a form to edit the todo item here
+        console.log('Editing todo with ID:', todoId);
+        console.log('Todo details:', todoItem);
+    } else {
+        console.error('Todo item not found.');
+    }
+}
+
+// Function to delete a todo item
+function deleteTodoItem(todoId) {
+    // Find the index of the todo item in the todoList array
+    const index = todoList.findIndex(todo => todo.id === todoId);
+    if (index !== -1) {
+        // Remove the todo item from the todoList array
+        todoList.splice(index, 1);
+        // Re-render the todo list
+        renderTodoList(todoList);
+        console.log('Deleted todo with ID:', todoId);
+    } else {
+        console.error('Todo item not found.');
+    }
+}
+
 
 // Event listener for form submission
 document.getElementById('todo-form').addEventListener('submit', handleFormSubmit);
