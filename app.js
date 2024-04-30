@@ -53,54 +53,12 @@ function handleButtonClick(event) {
         // Handle edit button click
         const todoId = target.getAttribute('data-id');
         // Implement edit functionality
-        const editedTodo = /* Fetch the todo item to be edited based on todoId */;
-        // Assuming there's a function editTodoItem to handle editing
-        editTodoItem(editedTodo);
+        console.log('Edit todo with ID:', todoId);
     } else if (target.classList.contains('delete-btn')) {
         // Handle delete button click
         const todoId = target.getAttribute('data-id');
         // Implement delete functionality
-        // Assuming there's a function deleteTodoItem to handle deletion
-        deleteTodoItem(todoId);
-    }
-}
-
-// Function to handle editing a todo item
-function editTodoItem(editedTodo) {
-    // Prompt user for new data or open a modal for editing
-    const newData = prompt('Enter the updated data for the todo item:', JSON.stringify(editedTodo));
-    if (newData) {
-        try {
-            const updatedTodo = JSON.parse(newData);
-            // Update the todo item using the updated data
-            const success = editTodo(updatedTodo);
-            if (success) {
-                console.log('Todo item successfully edited:', updatedTodo.id);
-                // Call render function to update the UI
-                renderTodoList(todoList);
-            } else {
-                console.error('Failed to edit todo item:', updatedTodo.id);
-            }
-        } catch (error) {
-            console.error('Invalid data entered:', newData);
-        }
-    }
-}
-
-// Function to handle deleting a todo item
-function deleteTodoItem(todoId) {
-    // Confirm deletion with the user
-    const confirmDelete = confirm('Are you sure you want to delete this todo item?');
-    if (confirmDelete) {
-        // Delete the todo item
-        const success = deleteTodo(todoId);
-        if (success) {
-            console.log('Todo item successfully deleted:', todoId);
-            // Call render function to update the UI
-            renderTodoList(todoList);
-        } else {
-            console.error('Failed to delete todo item:', todoId);
-        }
+        console.log('Delete todo with ID:', todoId);
     }
 }
 
