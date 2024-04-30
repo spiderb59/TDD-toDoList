@@ -1,5 +1,4 @@
-// Import functions from todoFunctions.js
-const { createTodo, editTodo, deleteTodo } = require('./todoFunctions');
+
 
 // Function to render todo list items
 function renderTodoList(todoList) {
