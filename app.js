@@ -1,5 +1,4 @@
-// Import functions from todoFunctions.js
-const { createTodo, editTodo, deleteTodo } = require('./todoFunctions');
+
 
 // Function to generate a unique ID for new todo items
 function generateTodoId() {
