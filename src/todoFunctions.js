@@ -1,3 +1,4 @@
+// Define todoList variable to store todo items
 let todoList = [];
 
 // Function to generate a unique ID for new todo items
@@ -69,8 +70,8 @@ function deleteTodo(todoId) {
     return true;
 }
 
-// Export functions for use in other modules
-module.exports = {
+// Export functions for use in other modules (for browser environment)
+window.todoFunctions = {
     createTodo,
     editTodo,
     deleteTodo
