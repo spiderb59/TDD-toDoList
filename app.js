@@ -19,7 +19,6 @@ function renderTodoList(todoList) {
             <span>Description: ${todo.description}</span><br>
             <span>Due Date: ${todo.dueDate}</span><br>
             <span>Priority: ${todo.priority}</span><br>
-            <button class="edit-btn" data-id="${todo.id}">Edit</button>
             <button class="delete-btn" data-id="${todo.id}">Delete</button>
         `;
         todoListElement.appendChild(todoItem);
@@ -45,15 +44,10 @@ function handleFormSubmit(event) {
     }
 }
 
-// Function to handle button click for editing or deleting a todo item
+
 function handleButtonClick(event) {
     const target = event.target;
-    if (target.classList.contains('edit-btn')) {
-        // Handle edit button click
-        const todoId = target.getAttribute('data-id');
-        // Implement edit functionality
-        editTodoItem(todoId);
-    } else if (target.classList.contains('delete-btn')) {
+      if (target.classList.contains('delete-btn')) {
         // Handle delete button click
         const todoId = target.getAttribute('data-id');
         // Implement delete functionality
@@ -61,18 +55,7 @@ function handleButtonClick(event) {
     }
 }
 
-// Function to edit a todo item
-function editTodoItem(todoId) {
-    // Find the todo item in the todoList array
-    const todoItem = todoList.find(todo => todo.id === todoId);
-    if (todoItem) {
-        // Example: You can open a modal or a form to edit the todo item here
-        console.log('Editing todo with ID:', todoId);
-        console.log('Todo details:', todoItem);
-    } else {
-        console.error('Todo item not found.');
-    }
-}
+
 
 // Function to delete a todo item
 function deleteTodoItem(todoId) {
